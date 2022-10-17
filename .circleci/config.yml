@@ -87,7 +87,7 @@ jobs:
           name: Deploy to aws cloud front
           ##if we dont have repo/build dont add it into the s3 bucket prod
           command: |
-            aws configure set preview.cloudfront
+            aws configure set preview.cloudfront true
             if [ "${CIRCLE_BRANCH}" == "master" ]
             then
               aws cloudfront create-invalidation --distribution-id ${PRODUCTION_DISTRIBUTION} --paths /\*
