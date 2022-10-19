@@ -52,7 +52,7 @@ jobs:
       - *install-dependencies
       - *save-cache
 
-   linting:
+  linting:
     executor: app-executor
     steps: 
       - checkout
