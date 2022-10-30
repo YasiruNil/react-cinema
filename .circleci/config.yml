@@ -141,15 +141,7 @@ jobs:
                       "emoji": true
                     }
                   ]
-                },
-                {
-                  "type": "header"
-                  "text": {
-                    "type": "plain_text"
-                    "text": "${CIRCLE_BRANCH} branch deployment to aws s3 and cloud frot is completed 👍"
-                    "emoji": true
-                  }
-                },
+                }
               ]
             }
           event: always
