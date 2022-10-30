@@ -227,7 +227,11 @@ workflows:
       #           - develop
       #           - staging
       #           - master
-      -test:  
+workflows:
+
+  build_and_deploy: 
+    jobs:
+      - test:  
           filters:
             branches:
               only:
