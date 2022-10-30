@@ -172,7 +172,7 @@ jobs:
                       "type": "button",
                       "text": {
                         "type": "plain_text",
-                        "text": "View job",
+                        "text": "View job"
                       },
                       "url": "${CIRCLE_BUILD_URL}"
                     }
