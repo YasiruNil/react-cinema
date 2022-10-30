@@ -133,7 +133,7 @@ jobs:
             {
               "blocks": [
                  {
-                  "type": "header"
+                  "type": "header",
                   "text": {
                     "type": "plain_text",
                     "text": "${CIRCLE_BRANCH} branch deployment to aws s3 and cloud frot is completed 👍",
@@ -141,7 +141,7 @@ jobs:
                   }
                 },
                 {
-                  "type": "section"
+                  "type": "section",
                   "fields": [
                     {
                     "type": "mrkdwn",
