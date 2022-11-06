@@ -136,7 +136,7 @@ jobs:
                   "type": "header",
                   "text": {
                     "type": "plain_text",
-                    "text": "${CIRCLE_BRANCH} branch deployment to aws s3 and cloud frot is completed 👍",
+                    "text": "${CIRCLE_BRANCH} branch deployment to aws s3 and cloud front is completed 👍",
                     "emoji": true
                   }
                 },
