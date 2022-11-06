@@ -11,11 +11,11 @@ import {
   MOVIE_TYPE_CHANGE_SUCCESS,
   MOVIE_TYPE_CHANGE_FAIL
 } from '../action_types/index';
-export function * watcherFetchMovies() {
+export function* watcherFetchMovies() {
   yield takeLatest(MOVIE_LIST_REQUEST, workerFetchMovies);
 }
 
-function * workerFetchMovies(payload) {
+function* workerFetchMovies(payload) {
   const { moviedata } = payload;
   const result = yield movieApi(moviedata);
   if (result && result.status === 200) {
@@ -25,11 +25,11 @@ function * workerFetchMovies(payload) {
   }
 }
 
-export function * watcherLoadMoreMovies() {
+export function* watcherLoadMoreMovies() {
   yield takeLatest(LOAD_MORE_REQUEST, workerLoadMoreMovies);
 }
 
-function * workerLoadMoreMovies(payload) {
+function* workerLoadMoreMovies(payload) {
   const { moreMovies } = payload;
   const result = yield movieApi(moreMovies);
   if (result && result.status === 200) {
@@ -39,11 +39,11 @@ function * workerLoadMoreMovies(payload) {
   }
 }
 
-export function * watcherChangedMovies() {
+export function* watcherChangedMovies() {
   yield takeLatest(MOVIE_TYPE_CHANGE_REQUEST, workerChangedMovies);
 }
 
-function * workerChangedMovies(payload) {
+function* workerChangedMovies(payload) {
   const { changedMovies } = payload;
   const result = yield movieApi(changedMovies);
   if (result && result.status === 200) {

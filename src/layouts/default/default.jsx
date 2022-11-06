@@ -7,7 +7,7 @@ const DefaultLayOut = () => {
     <section className="layout">
       <aside className="sidebar" />
       <section>
-        <Header/>
+        <Header />
         <main>
           <Outlet />
         </main>
