@@ -6,7 +6,9 @@ const SecondaryLayout = () => {
     <section className="layout">
       <aside className="right-panel">
         <h2>hey new stuff</h2>
-        <main> <Outlet /></main>
+        <main>
+          <Outlet />
+        </main>
       </aside>
     </section>
   );
