@@ -48,17 +48,19 @@ const HomePage = (props) => {
 
   const fetchMoreData = () => {
     if (props.list?.page < props.list?.totalPages) {
-      setCurrentPage((prev) => prev + 1);
       const movieType = searchParams.get('type');
       const data = { type: movieType, page: props.list?.page + 1 };
-      props.loadMoreMovies(data);
+      if (!props.list?.halfLoading) {
+        props.loadMoreMovies(data);
+      }
     }
   };
 
   const handleScroll = () => {
     const containerHeight = mainRef.current.getBoundingClientRect()?.bottom;
     const { top: bottomRef } = bottomLineRef.current.getBoundingClientRect();
-    if (Math.trunc(bottomRef) <= containerHeight) {
+    console.log(Math.trunc(bottomRef), containerHeight);
+    if (Math.trunc(bottomRef) === containerHeight) {
       fetchMoreData();
     }
   };
