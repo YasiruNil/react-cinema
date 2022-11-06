@@ -1,20 +1,31 @@
-import logo from './logo.svg';
 import { React } from 'react';
-import './App.css';
+import './App.scss';
+import HomePage from './component/home/home';
+import AuthRoute from './shared/auth/authRoute';
+import { Route, Routes } from 'react-router-dom';
+import NotFound from './component/notFound/notFound';
+import DefaultLayOut from './layouts/default/default';
+import Dashboard from './component/dashboard/dashboard';
+import SecondaryLayout from './layouts/secondary/secondary';
+
+// jsx=javascript XML ,not required to use jsx file extention but its easy to recognize
+//  inside return those are converted to pure js (create element/append child)
 
 const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      {/* Normal Routes */}
+      <Route element={<DefaultLayOut />}>
+        <Route path="/" element={<HomePage />} />
+      </Route>
+      {/* Auth Routes */}
+      <Route element={<AuthRoute />}>
+        <Route element={<SecondaryLayout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Route>
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 };
 

@@ -1,0 +1,16 @@
+// movie reducer
+export const MOVIE_LIST_FAIL = 'MOVIE_LIST_FAIL';
+export const MOVIE_LIST_REQUEST = 'MOVIE_LIST_REQUEST';
+export const MOVIE_LIST_SUCCESS = 'MOVIE_LIST_SUCCESS';
+
+// Load more images
+
+export const LOAD_MORE_FAIL = 'LOAD_MORE_FAIL';
+export const LOAD_MORE_REQUEST = 'LOAD_MORE_REQUEST';
+export const LOAD_MORE_SUCCESS = 'LOAD_MORE_SUCCESS';
+
+// Movie type change
+
+export const MOVIE_TYPE_CHANGE_FAIL = 'MOVIE_TYPE_CHANGE_FAIL';
+export const MOVIE_TYPE_CHANGE_REQUEST = 'MOVIE_TYPE_CHANGE_REQUEST';
+export const MOVIE_TYPE_CHANGE_SUCCESS = 'MOVIE_TYPE_CHANGE_SUCCESS';
