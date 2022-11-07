@@ -7,7 +7,7 @@ import './home.scss';
 import Grid from '../grid/grid';
 import Paginates from '../paginates/paginates';
 import { fetchMovies, loadMoreMovies } from '../../redux/actions';
-
+import LoaderImage from '../../assets/images/load.gif';
 import { PropTypes } from 'prop-types';
 
 const HomePage = (props) => {
@@ -38,12 +38,21 @@ const HomePage = (props) => {
     { url: '/images/av.jpeg', alt: 'img-04', rating: 3 }
   ];
 
+  const Loading = ({ error }) => {
+    if (error) {
+      return 'error';
+    } else {
+      return (
+        <div className="slider-wrapper">
+          <image src={LoaderImage} />
+        </div>
+      );
+    }
+  };
+
   const Slide = Loadable({
     loader: () => import('../slide/slide'),
-    loading() {
-      return <div>Loading...</div>;
-    },
-    delay: '2000'
+    loading: Loading
   });
 
   const fetchMoreData = () => {
@@ -131,6 +140,7 @@ const mapStateToProps = ({ movie }) => ({
 });
 
 HomePage.propTypes = {
+  error: PropTypes.any.isRequired,
   fetchMoviesList: PropTypes.func.isRequired,
   list: PropTypes.any.isRequired,
   loadMoreMovies: PropTypes.func.isRequired

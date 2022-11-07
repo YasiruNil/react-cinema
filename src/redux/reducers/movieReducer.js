@@ -6,7 +6,10 @@ import {
   LOAD_MORE_SUCCESS,
   LOAD_MORE_FAIL,
   MOVIE_TYPE_CHANGE_SUCCESS,
-  MOVIE_TYPE_CHANGE_FAIL
+  MOVIE_TYPE_CHANGE_FAIL,
+  MOVIE_DETAILS_FAIL,
+  MOVIE_DETAILS_SUCCESS,
+  MOVIE_DETAILS_REQUEST
 } from '../action_types/index';
 const initialstate = {
   movieList: [],
@@ -14,7 +17,8 @@ const initialstate = {
   loading: false,
   page: 1,
   totalPages: 1,
-  halfLoading: false
+  halfLoading: false,
+  movieDetails: []
 };
 
 export const movieReducer = (status = initialstate, action) => {
@@ -83,6 +87,31 @@ export const movieReducer = (status = initialstate, action) => {
         loading: false,
         halfLoading: false,
         movieList: []
+      };
+
+    case MOVIE_DETAILS_REQUEST:
+      return {
+        ...status,
+        loading: true,
+        halfLoading: false,
+        movieList: [],
+        movieDetails: []
+      };
+    case MOVIE_DETAILS_SUCCESS:
+      return {
+        ...status,
+        loading: false,
+        halfLoading: false,
+        movieList: [],
+        movieDetails: action.response
+      };
+    case MOVIE_DETAILS_FAIL:
+      return {
+        ...status,
+        loading: false,
+        halfLoading: false,
+        movieList: [],
+        movieDetails: []
       };
 
     default:

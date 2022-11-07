@@ -23,12 +23,14 @@
 }
 
 .grid-cell:hover {
+  cursor: pointer;
   box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
   transform: translateY(-3px) scale(1.1);
 }
 
 .grid-cell:hover .grid-read-more {
   display: flex;
+ 
   background: rgba(49, 56, 64, 0.1);
   transition: all 1s ease-out;
 }
