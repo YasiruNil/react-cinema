@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate, createSearchParams } from 'react-router-dom';
 import { fetchMovies } from '../../redux/actions';
 import { PropTypes } from 'prop-types';
 import './header.scss';
@@ -33,6 +33,7 @@ const HEADER_LIST = [
 ];
 
 const Header = (props) => {
+  const navigate = useNavigate();
   let [navClass, setNavClass] = useState(false);
   let [menuClass, setMenuClass] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -56,6 +57,14 @@ const Header = (props) => {
     if (!!searchParams.get('page') && !!searchParams.get('type')) {
       setSearchParams(data);
       props.fetchMoviesList(data);
+    } else {
+      navigate({
+        pathname: '/',
+        search: createSearchParams({
+          type: MovieType,
+          page: 1
+        }).toString()
+      });
     }
   };
 

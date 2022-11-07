@@ -1,3 +1,3 @@
-import { fetchMovies, loadMoreMovies, fetchChangedMovies } from './movie';
+import { fetchMovies, loadMoreMovies, fetchMovieDetails, fetchChangedMovies } from './movie';
 
-export { fetchMovies, loadMoreMovies, fetchChangedMovies };
+export { fetchMovies, loadMoreMovies, fetchChangedMovies, fetchMovieDetails };

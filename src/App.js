@@ -8,6 +8,7 @@ import DefaultLayOut from './layouts/default/default';
 import Dashboard from './component/dashboard/dashboard';
 import SecondaryLayout from './layouts/secondary/secondary';
 import ErrorBoundary from './component/error/errorBoundary';
+import Details from './component/details/details';
 
 // jsx=javascript XML ,not required to use jsx file extention but its easy to recognize
 //  inside return those are converted to pure js (create element/append child)
@@ -19,6 +20,7 @@ const App = () => {
         {/* Normal Routes */}
         <Route element={<DefaultLayOut />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/:id/:name/details" element={<Details />} />
         </Route>
         {/* Auth Routes */}
         <Route element={<AuthRoute />}>

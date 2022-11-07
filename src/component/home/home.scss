@@ -37,6 +37,7 @@
 }
 .loading-wrapper {
   height: 400px;
+  width: 100%;
   position: relative;
   display: grid;
   place-items: center center;
@@ -119,4 +120,8 @@
   50% {
     transform: translate(5px, -5px) scale(0.6);
   }
+}
+
+.slider-wrapper{
+  height: 100vh;
 }
