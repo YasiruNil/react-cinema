@@ -36,15 +36,15 @@ const Media = (props) => {
           <div>
             <div className="media-title">Photos ({movieDetails[2]?.data?.posters.length})</div>
             <div className="media-images">
-            {movieDetails[2]?.data.posters.map((data, i) => (
-              <div
-                key={i}
-                className="image-cell"
-                style={{
-                  backgroundImage: `url(https://image.tmdb.org/t/p/w500${data?.file_path})`
-                }}
-              ></div>
-            ))}
+              {movieDetails[2]?.data.posters.map((data, i) => (
+                <div
+                  key={i}
+                  className="image-cell"
+                  style={{
+                    backgroundImage: `url(https://image.tmdb.org/t/p/w500${data?.file_path})`
+                  }}
+                ></div>
+              ))}
             </div>
           </div>
         </div>
