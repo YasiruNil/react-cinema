@@ -11,7 +11,7 @@ COPY . /app
 RUN npm ci
 
 # build production app
-RUN npm build
+RUN npm run-script build
 
 # listen to a specific port
 EXPOSE 3000
